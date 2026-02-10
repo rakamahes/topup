@@ -160,7 +160,7 @@
         <section class="mb-8">
             <div class="flex items-center gap-2 mb-3">
                 <span class="bg-purple-600 w-6 h-6 rounded flex items-center justify-center text-xs font-bold">1</span>
-                <h3 class="font-semibold text-purple-100">Masukkan Data Akun</h3>
+                <h3 class="font-semibold text-purple-100">Masukkan ID</h3>
             </div>
             
             <div class="grid grid-cols-3 gap-3">
@@ -174,7 +174,7 @@
                         class="w-full bg-slate-800/50 border border-purple-500/30 rounded-lg py-3 px-3 text-sm text-gray-400 text-center focus:outline-none transition cursor-not-allowed">
                 </div>
             </div>
-            <p class="text-[10px] text-gray-400 mt-2 italic">*Untuk Free Fire cukup isi User ID saja.</p>
+            <p class="text-[10px] text-gray-400 mt-2 italic">*Pastikan ID Sudah Benar.</p>
         </section>
 
         <!-- Pilihan Nominal -->
@@ -200,8 +200,8 @@
                 <!-- QRIS -->
                 <div onclick="selectPayment('QRIS')" id="pay-QRIS" class="payment-item cursor-pointer bg-white rounded-lg p-3 border-2 border-transparent hover:border-purple-500 transition-all">
                     <div class="flex flex-col items-center justify-center h-full gap-1">
-                        <img src="https://cdn.discordapp.com/attachments/1382557288686030978/1470097540753129595/iconQris.png?ex=698a0e86&is=6988bd06&hm=d9bdcbee3fb2758717167083edf5d045b4e652309b7752ef14a3b23454af324f&" alt="QRIS" class="h-6 object-contain">
-                        <span class="text-gray-800 text-xs font-bold">QRIS (Scan)</span>
+                        <img src="https://id.pinterest.com/pin/528821181267262409#imgViewer">
+                        <span class="text-gray-800 text-xs font-bold">QRIS</span>
                     </div>
                 </div>
                 <!-- DANA -->
@@ -336,16 +336,17 @@
 
             // Update Input Zone ID
             if (config.games[gameKey].requireZone) {
+                zoneId.style.display = 'block'
                 zoneInput.disabled = false;
                 zoneInput.classList.remove('bg-slate-800/50', 'text-gray-400', 'cursor-not-allowed');
                 zoneInput.classList.add('bg-slate-900/80', 'text-white');
                 zoneInput.placeholder = "Zone ID";
             } else {
+                zoneId.style.display = 'none';
                 zoneInput.disabled = true;
                 zoneInput.value = '';
                 zoneInput.classList.add('bg-slate-800/50', 'text-gray-400', 'cursor-not-allowed');
                 zoneInput.classList.remove('bg-slate-900/80', 'text-white');
-                zoneInput.placeholder = "Tidak Perlu Zone ID";
             }
 
             renderProducts();
